@@ -11,7 +11,7 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
 # --- Gemini LLM ---
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-pro", temperature=0.7)
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
 
 # --- Define state ---
 RecipeState = dict
