@@ -6,9 +6,11 @@ from langgraph.graph import StateGraph
 import os
 from dotenv import load_dotenv
 load_dotenv()
-
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
+
+# For Streamlit Cloud, load from secrets if env var is missing
+if not GOOGLE_API_KEY and "GOOGLE_API_KEY" in st.secrets:
+    GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
 
 # --- Gemini LLM ---
 llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
