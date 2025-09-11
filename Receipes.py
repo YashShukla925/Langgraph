@@ -81,7 +81,7 @@ graph = builder.compile()
 
 #  UI Part
 st.set_page_config(page_title="Fridge Recipe Generator 🍳")
-st.title("🥕 Recipe Generator from Your Fridge")
+st.title("🥕 YourChef")
 
 ingredients_input = st.text_area("🧺 Enter the ingredients in your fridge:", placeholder="e.g. eggs, spinach, tomatoes, onion...")
 
